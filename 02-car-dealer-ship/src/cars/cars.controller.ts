@@ -7,14 +7,18 @@ import {
   ParseUUIDPipe,
   Patch,
   Post,
-  UsePipes,
-  ValidationPipe,
 } from '@nestjs/common';
 import {CarsService} from './cars.service';
 import {Car} from "./interfaces/car.interface";
 import {CreateCarDto} from "./dto/create-car.dto";
 
 @Controller('cars')
+// El use UsePipes puede ser usado aquí
+// Sin embargo ya que es usado por casí
+// todos los endpoints debe funcionar como
+// un provider y es optimo colocarlo en el
+// nivel mas alto de la aplicacion
+// @UsePipes(ValidationPipe)
 export class CarsController {
 
   constructor(private readonly carsService: CarsService) {
@@ -31,7 +35,6 @@ export class CarsController {
   }
 
   @Post()
-  @UsePipes(ValidationPipe)
   createCar(@Body() request: CreateCarDto): object {
     return this.carsService.addCar(request);
   }

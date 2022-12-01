@@ -48,7 +48,9 @@ export class CarsService {
     return this.cars.map((data: Car) => (data['id'] === id ? {...data, ...car} : data));
   }
 
-  public deleteCar(_id: string): object {
+  public deleteCar(id: string): object {
+    this.cars = this.cars.filter((data) => data.id !== id)
+
     return {
       response: "Car deleted successful"
     }
