@@ -4,23 +4,7 @@ import {v4 as uuid} from "uuid";
 
 @Injectable()
 export class CarsService {
-  private cars: Car[] = [
-    {
-      id: uuid(),
-      brand: "Kia",
-      model: "Picanto"
-    },
-    {
-      id: uuid(),
-      brand: "Toyota",
-      model: "Corolla"
-    },
-    {
-      id: uuid(),
-      brand: "Hyundai",
-      model: "Accent"
-    },
-  ]
+  private cars: Car[] = []
 
   public findAll(): object[] {
     return this.cars
@@ -54,5 +38,9 @@ export class CarsService {
     return {
       response: "Car deleted successful"
     }
+  }
+
+  public fillCardWithSeed(cars: Car[]) {
+    this.cars = cars
   }
 }
