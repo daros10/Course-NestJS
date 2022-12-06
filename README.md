@@ -2,4 +2,4 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-# Course-NestJS
+<h1 style="text-align: center;">Course-NestJS</h1>
